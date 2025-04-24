@@ -1,119 +1,130 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background: #000;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100dvh;
-  font-family: 'Montserrat', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Modern Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body.light-theme {
-  background: #f4f4f4;
-  color: #111;
-}
+    body {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100dvh;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-body.light-theme .screen,
-body.light-theme .phone-frame,
-body.light-theme .card,
-body.light-theme .project {
-  background-color: #fff !important;
-  color: #111 !important;
-}
+    body.light-theme {
+      background: #f4f4f4;
+      color: #111;
+    }
 
-body.light-theme .project-details p,
-body.light-theme .card p,
-body.light-theme .social-handle {
-  color: #333 !important;
-}
+    body.light-theme .screen,
+    body.light-theme .phone-frame,
+    body.light-theme .card,
+    body.light-theme .project {
+      background-color: #fff !important;
+      color: #111 !important;
+    }
 
-.iphone-notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 30px;
-  background: white;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
+    body.light-theme .project-details p,
+    body.light-theme .card p,
+    body.light-theme .social-handle {
+      color: #333 !important;
+    }
 
-.camera-notch {
-  width: 12px;
-  height: 12px;
-  background: #333;
-  border-radius: 50%;
-  margin: 9px auto 0 auto;
-}
+    .iphone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 30px;
+      background: white;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
 
-.phone-frame {
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 9 / 19.5;
-  background: #1c1c1c;
-  border: 4px solid white;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+    .camera-notch {
+      width: 12px;
+      height: 12px;
+      background: #333;
+      border-radius: 50%;
+      margin: 9px auto 0 auto;
+    }
 
-.screen {
-  flex: 1;
-  padding: 24px;
-  overflow-y: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
+    .phone-frame {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 9 / 19.5;
+      background: #1c1c1c;
+      border: 4px solid white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
 
-.screen h1 {
-  font-size: 1.2rem;
-  color: #4fa3ff;
-  margin-bottom: 10px;
-}
+    .screen {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-.sub {
-  color: #bbb;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
+    .screen h1 {
+      font-size: 1.2rem;
+      color: #4fa3ff;
+      margin-bottom: 10px;
+    }
 
-.screen h4 {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
+    .sub {
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
 
-.image-block {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
+    .screen h4 {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .image-block {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
 
 .project {
-  flex: 0 0 85%;
+  flex: 0 0 100%; /* Full width of the container */
   background: #111;
   border-radius: 14px;
-  padding: 10px;
+  padding: 40px; /* Increased padding for more space around the content */
   scroll-snap-align: start;
   cursor: grab;
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 300px; /* Increased height for the project container */
 }
 
 .project:hover {
@@ -125,136 +136,226 @@ body.light-theme .social-handle {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9; /* Adjusted to fit larger images */
+  height: 800px; /* Set a fixed height for larger images */
 }
 
 .project-details {
-  margin-top: 10px;
+  margin-top: 20px; /* Increased margin for more space between text and image */
 }
 
 .project-details h3 {
-  font-size: 1rem;
+  font-size: 1.2rem; /* Increased font size */
 }
 
 .project-details p {
-  font-size: 0.78rem;
+  font-size: 1rem; /* Increased font size for better readability */
   color: #ccc;
-  margin: 4px 0;
+  margin: 8px 0; /* Adjusted margin */
 }
 
-.project-details a {
-  font-size: 0.78rem;
-  color: #4fa3ff;
-  text-decoration: none;
-}
 
-.skills-services {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 0;
-}
+    .project-details a {
+      font-size: 0.78rem;
+      color: #4fa3ff;
+      text-decoration: none;
+    }
 
-.skills-services h2 {
-  font-size: 1rem;
-  color: #4fa3ff;
-  margin-bottom: 12px;
-}
+    .skills-services {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 0;
+    }
 
-.cards-grid {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+    .skills-services h2 {
+      font-size: 1.5rem;
+      color: #4fa3ff;
+      margin: 25px 0 15px;
+    }
 
-.card {
-  background: #111;
-  border-radius: 14px;
-  padding: 16px;
-  max-width: 240px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  transition: transform 0.3s;
-}
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      justify-content: center;
+      justify-items: center;
+      margin: 0 auto 10px;
+      max-width: 100%;
+    }
 
-.card:hover {
-  transform: scale(1.05);
-}
+    .card {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 150px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.card i {
-  font-size: 2.5rem;
-  margin-bottom: 8px;
-}
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
 
-.card h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
 
-.card p {
-  font-size: 0.8rem;
-  color: #bbb;
-}
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
 
-.social-container {
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    .card p {
+      font-size: 0.8rem;
+      color: #ccc;
+    }
 
-.social-icons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff9900;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      z-index: 100;
+    }
 
-.social-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #1c1c1c;
-  padding: 12px;
-  border-radius: 14px;
-  transition: transform 0.3s;
-}
+    .social-container {
+      width: 100%;
+      margin-top: 0;
+    }
 
-.social-item:hover {
-  transform: scale(1.05);
-}
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
 
-.social-item i {
-  font-size: 1.5rem;
-  color: #4fa3ff;
-}
+    .social-item {
+      display: flex;
+      align-items: center;
+    }
 
-.social-info {
-  display: flex;
-  flex-direction: column;
-}
+    .social-item i {
+      font-size: 2rem;
+      margin-right: 10px;
+    }
 
-.social-name {
-  font-size: 1rem;
-  color: #fff;
-}
+    .social-info {
+      display: flex;
+      flex-direction: column;
+    }
 
-.social-handle {
-  font-size: 0.85rem;
-  color: #ccc;
-}
+    .social-name {
+      font-size: 1rem;
+      font-weight: bold;
+    }
 
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: none;
-  border: 1px solid #4fa3ff;
-  color: #4fa3ff;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 15;
-}
+    .social-handle {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      background: #000;
+    }
+
+    .nav i {
+      font-size: 1.4rem;
+      color: #888;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <div class="phone-frame">
+    <div class="iphone-notch"><div class="camera-notch"></div></div>
+    <div class="screen">
+      <h1>Seph Portfolio</h1>
+
+      <div style="display: flex; gap: 12px; align-items: center; margin: 12px 0 20px;">
+        <div style="flex-shrink: 0; width: 70px; height: 70px; background: #000; border-radius: 50%; overflow: hidden;">
+          <img src="https://via.placeholder.com/150" alt="Your Photo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div>
+          <p class="sub" style="margin: 0 0 5px;">Hi, I'm Seph 👋</p>
+          <p style="font-size: 0.8rem; color: #ccc;">A student in Batangas State University that aspires to be a Business Intelligence Analyst, passioniate in both Data Analytics and Web and Mobile Development.</p>
+        </div>
+      </div>
+
+      <h4>Hello there! Welcome to my project portfolio</h4>
+
+      <div class="image-block">
+        <div class="project">
+          <img src="https://via.placeholder.com/300x300.png?text=Project+1" alt="Project 1">
+          <div class="project-details">
+            <h3>Portfolio Website</h3>
+            <p>Responsive HTML/CSS portfolio to showcase skills.</p>
+            <a href="#">View Project</a>
+          </div>
+        </div>
+        <div class="project">
+          <img src="https://via.placeholder.com/300x300.png?text=Project+2" alt="Project 2">
+          <div class="project-details">
+            <h3>DoseSync App</h3>
+            <p>Medication reminder app built with Python and MySQL.</p>
+            <a href="#">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-services">
+        <h2>Developer Skills & Services</h2>
+        <div class="cards-grid">
+          <div class="card"><i class="fab fa-html5"></i><h3>HTML</h3><p>Building structured, semantic, and accessible web content</p></div>
+          <div class="card"><i class="fab fa-css3-alt"></i><h3>CSS</h3><p>Styling responsive and visually appealing websites</p></div>
+          <div class="card"><i class="fab fa-js-square"></i><h3>JavaScript</h3><p>Building interactive and dynamic web pages</p></div>
+          <div class="card"><i class="fab fa-java"></i><h3>Java</h3><p>Backend development with Java</p></div>
+          <div class="card"><i class="fab fa-python"></i><h3>Python</h3><p>Backend development and automation with Python</p></div>
+        </div>
+
+        <h2>Data Analytics</h2>
+        <div class="cards-grid">
+          <div class="card"><i class="fab fa-python"></i><h3>Python</h3><p>Data analysis and manipulation with Python</p></div>
+          <div class="card"><i class="fab fa-java"></i><h3>Java</h3><p>Building analytics tools with Java</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3>SQL</h3><p>Database querying and reporting with SQL</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3>Oracle</h3><p>Working with Oracle databases</p></div>
+          <div class="card"><i class="fas fa-database"></i><h3>SQLite</h3><p>Lightweight databases with SQLite</p></div>
+        </div>
+
+        <h2>Social Media Accounts</h2>
+        <div class="social-container">
+          <div class="social-icons">
+            <div class="social-item"><i class="fab fa-instagram"></i><div class="social-info"><div class="social-name">Instagram</div><div class="social-handle">@Keeeem_dl</div></div></div>
+            <div class="social-item"><i class="fab fa-linkedin"></i><div class="social-info"><div class="social-name">LinkedIn</div><div class="social-handle">@CeferinoKimmTDeLas</div></div></div>
+            <div class="social-item"><i class="fab fa-facebook"></i><div class="social-info"><div class="social-name">Facebook</div><div class="social-handle">@CeferinoKimm</div></div></div>
+            <div class="social-item"><i class="fab fa-twitter"></i><div class="social-info"><div class="social-name">Twitter</div><div class="social-handle">@Keeeemm_Twitter</div></div></div>
+            <div class="social-item"><i class="fab fa-youtube"></i><div class="social-info"><div class="social-name">YouTube</div><div class="social-handle">@KeeeemmVlogs</div></div></div>
+            <div class="social-item"><i class="fab fa-tiktok"></i><div class="social-info"><div class="social-name">TikTok</div><div class="social-handle">@KeeeemmTikTok</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
+    }
+  </script>
+</body>
+</html>
